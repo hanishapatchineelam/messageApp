@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row form-container">
+      <div class="offset-lg-4 col-lg-4 d-flex flex-column justify-content-center align-items-center">
+        <div class="card login-card">
+          <div class="card-body">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+              <input class="w-100 mt-5 mb-4" id="username" type="text" placeholder="Username" formControlName="username" required>
+              <input  class="w-100 mb-5" type="password" id="password" placeholder="Password" formControlName="password" required>
+              <button type="submit" class="btn custom-button w-100">Sign In</button>
+          </form>
+          </div>
+        </div>
+        <div class="alert alert-danger mt-4" role="alert" *ngIf="loginFormError">
+          {{loginFormError}}
+        </div>
+      </div>
+    </div>
+  </div>

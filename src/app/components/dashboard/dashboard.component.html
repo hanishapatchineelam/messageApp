@@ -1,0 +1,9 @@
+<div class="container-fluid dashboard-container">
+    <div class="row selectable">
+        <div class="offset-2"></div>
+        <div class="col-3 mr-1" [routerLink]="['/dashboard/sent']">Sent</div>
+        <div class="col-3 mr-1" [routerLink]="['/dashboard/inbox']">Inbox</div>
+        <div class="col-3 mr-1" [routerLink]="['/dashboard/compose']">Compose</div>
+    </div>
+    <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,36 @@
+<div class="row mt-5">
+  <div class="offset-2"></div>
+  <div *ngIf="listOfMessages.length; then thenBlock; else elseBlock"></div>
+  <ng-template #thenBlock>
+    <table class="col-9 table table-sm table-dark">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Title</th>
+          <th scope="col">Body</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let message of listOfMessages">
+          <td class="align-middle p-2">{{ message.id }}</td>
+          <td class="align-middle p-2">{{ message.title }}</td>
+          <td class="align-middle p-2">{{ message.body }}</td>
+          <button
+            (click)="deleteMessage(message.id)"
+            class="btn btn-danger mt-1 mb-1"
+          >
+            Delete
+          </button>
+        </tr>
+      </tbody>
+    </table>
+  </ng-template>
+  <ng-template #elseBlock>
+    <div
+      class="alert alert-primary col-9 d-flex justify-content-center"
+      role="alert"
+    >
+      No Messages Found
+    </div>
+  </ng-template>
+</div>

@@ -1,0 +1,33 @@
+<div class="row mt-5">
+  <div class="offset-2"></div>
+  <div class="col-9">
+    <form [formGroup]="composeMessageForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <input
+          class="form-control mb-4"
+          aria-describedby="title"
+          placeholder="Title"
+          id="title"
+          type="text"
+          formControlName="title"
+        />
+      </div>
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control mb-4"
+          aria-describedby="Body"
+          placeholder="Body"
+          id="body"
+          formControlName="body"
+        />
+      </div>
+      <div class="d-flex justify-content-center">
+      <button type="submit" class="btn btn-primary col-12">Submit</button>
+      </div>
+    </form>
+    <div class="alert alert-danger mt-3" role="alert" *ngIf="formError">
+        Please fill all fields
+    </div>
+  </div>
+</div>
